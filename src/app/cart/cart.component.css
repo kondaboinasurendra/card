@@ -1,0 +1,19 @@
+.image{
+    width: 30px;
+    float: right;
+    position: relative;
+    top: -40px;
+    left: -30px;
+    border-radius: 30px;
+    
+}
+.badge{
+    float: right;
+    position: relative;
+    top: -43px;
+    left: -66px;
+    background-color:green;
+    color: white;
+    z-index: 1;
+    border-radius: 20px;
+}

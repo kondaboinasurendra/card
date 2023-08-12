@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="main">
+        <img src="https://w7.pngwing.com/pngs/670/265/png-transparent-checkmark-done-exam-list-pencil-todo-xomo-basics-icon-thumbnail.png" alt="">
+        Todo App
+    </div>
+    <div class="main2">
+        <label for="todo">Todo Name</label>
+         <input type="text" placeholder="Enter todo" [(ngModel)]="todo">
+         <label for="todo">Todo Status</label>
+         <select name="status" [(ngModel)]="status">
+         <option value="pending">Pending</option>
+         <option value="processing">Processing</option>
+         <option value="completed">Completed</option>
+         </select>
+         <button class="btn btn-primary" (click)="add(todo,status)">Add</button>
+
+    </div>
+</div>
+<div class="task-main">
+    <div class="p-main">
+        <h5>All Todo's</h5>
+        <div *ngFor="let t of list;let i=index">
+            <p [ngClass]="{'pen':t.status=='pending','com':t.status=='completed','pro':t.status=='processing'}">{{t.name}}</p>
+
+        </div>
+        </div>
+    <div class="p-main">
+        <h5>Pending Actions</h5>
+        <div class="p-task" *ngFor="let t of list;let i=index">
+            <p [ngClass]="{'pen':t.status=='pending'}"  *ngIf="t.status=='pending'">{{t.name}}</p>
+
+        </div>
+        </div>
+        <div class="p-main">
+            <h5>Processing Actions</h5>
+            <div class="p-task1" *ngFor="let t of list;let i=index">            
+                <p  [ngClass]="{'pro':t.status=='processing'}" *ngIf="t.status=='processing'">{{t.name}}</p>
+            </div>
+            
+
+    </div>
+    <div class="p-main">
+        <h5>Completed Actions</h5>
+        <div class="p-task2" *ngFor="let t of list;let i=index">            
+            <p [ngClass]="{'com':t.status=='completed'}"   *ngIf="t.status=='completed'">{{t.name}}</p>
+        </div>
+    </div>
+</div>

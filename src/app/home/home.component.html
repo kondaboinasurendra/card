@@ -1,0 +1,11 @@
+<div class="main">
+    <div class="product" *ngFor="let p of products">
+        <img src="{{p.image}}" alt="">
+         <p>{{p.id}}</p>
+        <p>{{p.title}}</p>
+        <p>{{p.price}}</p>
+        <p>{{p.category}}</p>
+        <button (click)="add(p)" class="btn btn-primary">add</button>
+        
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="main">
+    <div class="form">
+        <h2 class="text-center">Employees form</h2><br>
+        <div>
+            <label for="fname">Name:</label>
+            <input type="text" placeholder="Enter your name...." name="name" required [(ngModel)]="name">
+        </div>
+        <div>
+            <label for="id">Id:</label>
+            <input type="text" required placeholder="Enter your id" name="id" [(ngModel)]="id">
+        </div>
+        <div>
+            <label for="Email">Email:</label>
+            <input type="text" placeholder="Enter your email..."  required  name="email" [(ngModel)]="email">
+        </div>
+        <div>
+            <label for="Phone">Phone:</label>
+            <input type="text" placeholder="Enter your phone..." required name="phone" [(ngModel)]="phone">
+        </div><br>
+       <div class="text-center"> <button class="btn btn-success " (click)="add()">Add Employees</button>&nbsp;
+        <button class="btn btn-danger " (click)="reset()">Reset</button>
+    </div>
+    </div>
+    <div class="vertical"></div>
+    <div class="EmployeeTable">
+        <h1 class="text-center">Employess List</h1>
+        <table class="table table-bordered ">
+            <thead class="text-center">
+                <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of usersList;let i=index;">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td><button (click)="delete(i)" class="btn btn-danger">Delete</button></td>
+            </tr>
+            </tbody>
+            
+        </table>
+
+    </div>
+</div>

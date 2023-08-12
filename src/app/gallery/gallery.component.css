@@ -1,0 +1,46 @@
+.main img{
+    width: 60px;
+    
+
+}
+label{
+    margin: 5px;
+    padding: 5px;
+}
+.todo{
+    width: 50px;
+}
+select{
+    width: 150px;
+}
+
+
+.container-fluid{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+.task-main{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.com{
+    border-left:6px solid  green;
+    padding-left: 8px;
+}
+
+    .pro{
+        border-left: 6px solid yellow;
+        padding-left: 8px;
+    }
+    .pen{
+        border-left: 6px solid red;
+        padding-left: 8px;
+    }
+
+    
+

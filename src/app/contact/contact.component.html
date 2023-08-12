@@ -1,0 +1,49 @@
+<div class
+="main">
+    <div class="form">
+        <h3 class="text-center">User Form</h3>
+        <form [formGroup] ="userform" (ngSubmit)="save()">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter your name..." formControlName="name">
+            </div>
+            <div>
+                <label for="id">Id</label>
+                <input type="text" placeholder="Enter your id..." name="id" formControlName="id">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" placeholder="Enter your email..." name="email" formControlName="email">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="text" placeholder="Enter your phone..." name="phone" formControlName="phone">
+            </div>
+            <div class="text-center"><button class="btn btn-primary">Add</button></div>
+
+        </form>
+
+    </div>
+    <div class="vertical"></div>
+    <div class="userDetailes">
+        <h3 class="text-center">User EmployeeTable</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let user of userList;let i=index;">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td><button (click)="delete(i)"  class="btn btn-warning">delete</button></td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
